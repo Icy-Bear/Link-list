@@ -1,24 +1,47 @@
 #include<iostream>
 
-// class Node
-// {
-// public:
-//     int val;
-//     void* next = NULL;
+class Node
+{
+public:
+    int val;
+    Node* next;
 
-//     Node(int val , void* next) : val(val) , next(next) {}
+    Node(int val = 0 , Node* next = NULL)
+    {
+        this->val = val;        
+        this->next = next;
+    }
 
-//     void print(Node n)
-//     {
-//         while (n.next != NULL ){
-//             std::cout << n.val << std::endl;
-//         }
-//     }
-
-// };
+    void print(Node head)
+    {
+        while (true)
+        {
+            std::cout << head.val << std::endl;
+            if (head.next == NULL) {break;} 
+            head = *(head.next);
+        }
+    }
+};
 
 int main()
 {
-    std::cout << "Hello World" << std::endl;
+    Node a = Node(1);
+    Node b = Node(2);
+    Node c = Node(3);
+    Node d = Node(4);
+
+    a.next = &b;
+    b.next = &c;
+    c.next = &d;
+
+    Node LL;
+
+    LL.print(a);
+
+
+
+
+
+
     return 0;
 }
