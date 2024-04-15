@@ -12,11 +12,16 @@ public:
     {
         while (true)
         {
-            std::cout << head.val << std::endl;
-            if (head.next == NULL) {break;} 
+            std::cout << '(' << head.val << ')' << " --> ";
+            if (head.next == NULL) 
+            {
+                std::cout << "NULL" << std::endl;
+                break;
+            } 
             head = *(head.next);
         }
     }
+
 };
 
 int main()
