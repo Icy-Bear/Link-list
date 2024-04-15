@@ -6,11 +6,7 @@ public:
     int val;
     Node* next;
 
-    Node(int val = 0 , Node* next = NULL)
-    {
-        this->val = val;        
-        this->next = next;
-    }
+    Node(int val = 0 , Node* next = NULL) : val(val) , next(next) {}
 
     void print(Node head)
     {
@@ -25,7 +21,7 @@ public:
 
 int main()
 {
-    Node a = Node(1);
+    Node a(1);
     Node b = Node(2);
     Node c = Node(3);
     Node d = Node(4);
@@ -37,10 +33,6 @@ int main()
     Node LL;
 
     LL.print(a);
-
-
-
-
 
 
     return 0;
