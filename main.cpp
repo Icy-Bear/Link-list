@@ -10,6 +10,7 @@ public:
 
     void print(Node head)
     {
+        std::cout << ""<< std::endl;
         while (true)
         {
             std::cout << '(' << head.val << ')' << " --> ";
