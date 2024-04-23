@@ -24,7 +24,13 @@ public:
             head = *(head.next);
         }
     }
+    void insert(Node *head,int newbie){
+        Node newer;
+        newer.val = newbie;
+        newer.next = head->next;
+        head->next = &newer;
 
+    }
 };
 
 int main()
@@ -40,6 +46,7 @@ int main()
 
     Node LL;
 
+    LL.insert(&d,5);
     LL.print(a);
 
 
