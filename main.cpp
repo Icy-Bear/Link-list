@@ -7,8 +7,10 @@ public:
     int val;
     Node* next;
 
+    //Constructor
     Node(int val = 0 , Node* next = NULL) : val(val) , next(next) {}
 
+    //printing link-list in style
     void print(){
         Node* current = this;
         while (current != nullptr){
@@ -18,6 +20,7 @@ public:
         std::cout << "NULL" << std::endl;
     }
 
+    //to search a target in a link-list
     bool search(Node* target){
         Node* current = this;
 
@@ -29,7 +32,20 @@ public:
         return false;
     }
 
-	    
+    //to find the index
+    int index(Node* target){
+        int count = 0;
+        Node* current = this;
+
+        while (current != nullptr){
+            if (current == target) {return count;}
+
+            count++;
+            current = current->next;
+        }
+
+        return -1;
+    }	    
 
 };
 
@@ -50,6 +66,7 @@ int main()
     a.print();
 
     std::cout << (a.search(&temp) ? "YES" : "NO" ) << std::endl;
+    std::cout << a.index(&c) << std::endl;
 
     return 0;
 }
