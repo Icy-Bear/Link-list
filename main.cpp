@@ -1,6 +1,5 @@
 #include<iostream>
 
-//hiiii testing git hub
 
 class Node
 {
@@ -10,20 +9,27 @@ public:
 
     Node(int val = 0 , Node* next = NULL) : val(val) , next(next) {}
 
-    void print(Node head)
-    {
-        std::cout << ""<< std::endl;
-        while (true)
-        {
-            std::cout << '(' << head.val << ')' << " --> ";
-            if (head.next == NULL) 
-            {
-                std::cout << "NULL" << std::endl;
-                break;
-            } 
-            head = *(head.next);
+    void print(){
+        Node* current = this;
+        while (current != nullptr){
+            std::cout << '(' << current->val << ')' << "--> ";
+            current = current->next;
         }
+        std::cout << "NULL" << std::endl;
     }
+
+    bool search(Node* target){
+        Node* current = this;
+
+        while (current != nullptr){
+            if (current == target) {return true;}
+            current = current->next;
+        }
+
+        return false;
+    }
+
+	    
 
 };
 
@@ -38,10 +44,12 @@ int main()
     b.next = &c;
     c.next = &d;
 
-    Node LL;
+    Node temp;
 
-    LL.print(a);
 
+    a.print();
+
+    std::cout << (a.search(&temp) ? "YES" : "NO" ) << std::endl;
 
     return 0;
 }
